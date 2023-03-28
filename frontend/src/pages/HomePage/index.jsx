@@ -18,7 +18,7 @@ const HomePage = () => {
 			<h1>Últimos produtos</h1>
 			{
 				loading
-				? (
+				? (	
 					<Loader />
 				) : (
 					<div>

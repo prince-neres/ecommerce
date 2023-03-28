@@ -5,7 +5,7 @@ import Footer from '../../components/Footer';
 
 const BasePage = () => {
 	return (
-		<div>
+		<div className='flex flex-col justify-between'>
       <Navbar />
       <Outlet />
       <Footer />

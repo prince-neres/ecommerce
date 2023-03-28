@@ -21,7 +21,7 @@ export const login = (email, password) => async (dispatch) => {
 		};
 
 		const {data} = await axios.post(
-			'/api/users/login/',
+			'http://localhost:8000/api/users/login/',
 			{
 				'username': email,
 				'password': password
@@ -41,8 +41,8 @@ export const login = (email, password) => async (dispatch) => {
     dispatch({
 			type: USER_LOGIN_FAIL,
 			payload:
-				error.response && error.response.data.detail
-				? error.response.data.detail
+				error.response && error.response.data.details
+				? error.response.data.details
 				: error.message,
     });
   };
@@ -60,7 +60,7 @@ export const register = (name, email, password) => async (dispatch) => {
 		};
 
 		const {data} = await axios.post(
-			'/api/users/register/',
+			'http://localhost:8000/api/users/register/',
 			{
 				'name': name,
 				'email': email,
@@ -83,10 +83,11 @@ export const register = (name, email, password) => async (dispatch) => {
 	}
 
 	catch(error) {
+		console.log(error)
 		dispatch({
-			type:USER_REGISTER_FAIL,
-			payload:error.response && error.response.data.detail
-			? error.response.data.detail
+			type: USER_REGISTER_FAIL,
+			payload: error.response && error.response.data.details
+			? error.response.data.details
 			:error.message,
 		});
 	}
