@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
 import { listProducts } from '../../redux/actions/productAction';
 import Loader from '../../components/Loader';
+import Product from '../../components/Product';
 
 
 const HomePage = () => {
@@ -23,10 +24,11 @@ const HomePage = () => {
 				) : (
 					<div>
 						{
-							products.map((product, index) => (
-								<div key={index}>
-									<p>{product.name}</p>
-								</div>
+							products.map((product) => (
+								<Product
+									product={product}
+									key={product._id}
+								/>
 							))
 						}
 					</div>
