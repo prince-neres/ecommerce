@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
+import ProfilePage from './pages/ProfilePage';
 import BasePage from './pages/BasePage';
 
 
@@ -17,6 +18,7 @@ const Router = () => {
 						<Route path="/register" element={<RegisterPage />} exact />
 						<Route path="/product/:id" element={<ProductPage />} exact />
 						<Route path="/cart/:id?" element={<CartPage />} exact />
+						<Route path="/profile" element={<ProfilePage />} exact />
 				</Route>
 			</Routes>
 		</BrowserRouter>
