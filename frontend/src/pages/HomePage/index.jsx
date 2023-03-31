@@ -15,14 +15,14 @@ const HomePage = () => {
 	}, [dispatch])
 
 	return (
-		<div>
-			<h1>Últimos produtos</h1>
+		<div className='mb-3 p-5'>
+			<h2 className='font-bold pt-5'>Últimos produtos</h2>
 			{
 				loading
 				? (	
 					<Loader />
 				) : (
-					<div>
+					<div className='my-3 flex flex-col flex-wrap justify-center sm:flex-row'>
 						{
 							products.map((product) => (
 								<Product

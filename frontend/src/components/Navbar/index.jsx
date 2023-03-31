@@ -25,15 +25,15 @@ const Navbar = () => {
   };
 
 	return (
-		<nav className='flex items-center md:items-center  h-auto justify-between'>
+		<nav className='flex items-center md:items-center  h-auto justify-between bg-dark-blue'>
 			<div className='hidden sm:flex sm:flex-row p-8'>
-				<Link to={'/'} className={location.pathname === '/' ? 'font-bold' : 'hover:text-dark-theme duration-200'}>
+				<Link to={'/'} className={location.pathname === '/' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 					<p className='flex pr-5'>
 						<HomeIcon className='h-5 pr-1' />
 						Ínicio
 					</p>
 				</Link>
-				<Link to={'/cart'} className={location.pathname === '/cart' ? 'font-bold' : 'hover:text-dark-theme duration-200'}>
+				<Link to={'/cart'} className={location.pathname === '/cart' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 					<p className='flex pr-5'>
 						<ShoppingCartIcon className='h-5 pr-1' />
 						Carrinho
@@ -43,7 +43,7 @@ const Navbar = () => {
 					userInfo
 					? (
 						<>
-							<Link to={'/profile'} className={location.pathname === '/profile' ? 'font-bold' : 'hover:text-dark-theme duration-200'}>
+							<Link to={'/profile'} className={location.pathname === '/profile' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 								<p className='flex pr-5'>
 									<UserIcon className='h-5 pr-1' />
 									Perfil
@@ -58,7 +58,7 @@ const Navbar = () => {
 						</>
 					)
 					: (
-						<Link to={"/login"} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-theme duration-200'}>
+						<Link to={"/login"} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-blue duration-200'}>
 							<p className='flex hover:text-dark-theme duration-200'>
 								<ArrowRightOnRectangleIcon className='h-5 pr-1' />
 								Login

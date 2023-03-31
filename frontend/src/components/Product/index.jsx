@@ -4,31 +4,28 @@ import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
   return (
-    <div>
-      <Link to={`/product/${product._id}`}>
-        <img src={product.url} />
-      </Link>
-
-			<Link to={`/product/${product._id}`}>
-				<h3>
-					<strong>{product.name}</strong>
-				</h3>
-			</Link>
-
+    <Link to={`/product/${product._id}`} className='flex m-3 justify-center'>
+			<div className='p-5 flex flex-col w-64 text-center bg-dark-blue rounded'	>
 				<div>
-					{product.rating} de {product.numReviews} avaliações
+					<img src={product.url} className='h-56 rounded' />
 				</div>
+				<h3 className='font-bold my-2 line-clamp-2'>{product.name}</h3>
 
-			<strong>
-				${product.price}
-			</strong>
+				<p>
+					<strong>{Number(product.rating)}</strong> de {product.numReviews} avaliações
+				</p>
 
-			<Rating
-				value={product.rating}
-				text={`${product.numReviews} reviews`}
-				color={"#f8e825"}
-			/>
-    </div>
+				<strong className='py-3 bg-dark-orange my-2 rounded'>
+					{new Intl.NumberFormat('pt-BR', {currency: 'BRL', style: 'currency'}).format(product.price)}
+				</strong>
+
+				<Rating
+					value={product.rating}
+					text={`${product.numReviews} reviews`}
+					color={"#f8e825"}
+				/>
+			</div>
+    </Link>
   );
 }
 
