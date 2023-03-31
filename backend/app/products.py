@@ -15,7 +15,7 @@ products = [
     },
     {
       '_id': '2',
-      'name': 'Smart TV LED 50" 4K UHD Samsung 50BU8000 - Wifi, USB',
+      'name': 'Smart TV LED 50" 4K UHD Samsung 50BU8000',
       'url': 'http://localhost:8000/images/50BU8000.jpg',
       'image': '/images/50BU8000.jpg',
       'description':
@@ -29,7 +29,7 @@ products = [
     },
     {
       '_id': '3',
-      'name': 'Keychron K4',
+      'name': 'Teclado mecânico Keychron K4 wireless',
       'url': 'http://localhost:8000/images/keychronk4.jpg',
       'image': '/images/keychronk4.jpg',
       'description':
@@ -43,7 +43,7 @@ products = [
     },
     {
       '_id': '4',
-      'name': 'Sony Playstation 5',
+      'name': 'PlayStation®5 + God of War Ragnarök',
       'url': 'http://localhost:8000/images/ps5.jpg',
       'image': '/images/ps5.jpg',
       'description':
@@ -57,14 +57,14 @@ products = [
     },
     {
       '_id': '5',
-      'name': 'Logitech G-Series Gaming Mouse',
-      'url': 'http://localhost:8000/images/g203.jpg',
-      'image': '/images/g203.jpg',
+      'name': 'Mouse Laser Profissional sem Fio MX Master 3 - Logitech',
+      'url': 'http://localhost:8000/images/mxmaster3.jpg',
+      'image': '/images/mxmaster3.jpg',
       'description':
-        'Logitech G Mouse para jogos com fio 203, 8.000 DPI, luz de efeito óptico arco-íris, 6 botões programáveis, memória integrada, mapeamento de tela, compatível com computador PC/Mac e laptop - preto',
+        'O MX Master 3 oferece precisão instantânea e potencial infinito. Projetado para designers e desenvolvido para desenvolvedores, é o nosso mouse da Master Series mais avançado até agora. A roda MagSpeed eletromagnética quase completamente silenciosa oferece até 90% mais velocidade e 87% mais precisão. As personalizações de botões específicas do aplicativo aceleram seu fluxo de trabalho nos aplicativos que você mais usa. Sensor Darkfield de 4000 DPI significa que você pode rastrear praticamente em qualquer lugar - até mesmo em vidro. É cinco vezes mais rápido e mais preciso do que um mouse básico. Sua mão descansa perfeitamente na forma esculpida e o Flow permite que você trabalhe em vários computadores e sistemas operacionais - transferindo arquivos, imagens e pastas em um fluxo de trabalho perfeito.',
       'brand': 'Logitech',
       'category': 'Electronics',
-      'price': 150.99,
+      'price': 750.99,
       'countInStock': 7,
       'rating': 3.5,
       'numReviews': 10,
