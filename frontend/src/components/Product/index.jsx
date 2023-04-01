@@ -10,19 +10,13 @@ const Product = ({ product }) => {
 					<img src={product.url} className='h-56 rounded' />
 				</div>
 				<h3 className='font-bold my-2 line-clamp-2'>{product.name}</h3>
-
-				<p>
-					<strong>{Number(product.rating)}</strong> de {product.numReviews} avaliações
-				</p>
-
 				<strong className='py-3 bg-dark-orange my-2 rounded'>
 					{new Intl.NumberFormat('pt-BR', {currency: 'BRL', style: 'currency'}).format(product.price)}
 				</strong>
 
 				<Rating
 					value={product.rating}
-					text={`${product.numReviews} reviews`}
-					color={"#f8e825"}
+					text={`${product.numReviews} avaliações`}
 				/>
 			</div>
     </Link>

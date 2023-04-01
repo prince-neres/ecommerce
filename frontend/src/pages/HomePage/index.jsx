@@ -16,7 +16,7 @@ const HomePage = () => {
 
 	return (
 		<div className='mb-3 p-5'>
-			<h2 className='font-bold pt-5'>Últimos produtos</h2>
+			<h2 className='font-bold text-lg pt-5 text-center'>Últimos produtos</h2>
 			{
 				loading
 				? (	

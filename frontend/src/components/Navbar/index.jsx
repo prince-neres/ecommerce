@@ -50,7 +50,7 @@ const Navbar = () => {
 								</p>
 							</Link>
 							<button onClick={logoutHandler}>
-								<p className='flex hover:text-dark-theme duration-200'>
+								<p className='flex hover:text-dark-orange duration-200'>
 									<ArrowLeftOnRectangleIcon className='h-5 pr-1' />
 									Sair
 								</p>
@@ -58,7 +58,7 @@ const Navbar = () => {
 						</>
 					)
 					: (
-						<Link to={"/login"} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-blue duration-200'}>
+						<Link to={"/login"} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 							<p className='flex hover:text-dark-theme duration-200'>
 								<ArrowRightOnRectangleIcon className='h-5 pr-1' />
 								Login
