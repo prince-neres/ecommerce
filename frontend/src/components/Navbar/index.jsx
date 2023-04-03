@@ -13,6 +13,7 @@ import {
 	ArrowRightOnRectangleIcon
 } from '@heroicons/react/24/solid';
 import MobilMenu from './MobileMenu';
+import { useEffect } from 'react';
 
 
 const Navbar = () => {
@@ -23,9 +24,15 @@ const Navbar = () => {
   const logoutHandler = () => {
     dispatch(logout());
   };
+	const cart = useSelector (state => state.cart);
+	const { cartItems } = cart;
+
+	useEffect(() => {
+		console.log(cartItems)
+	}, [])
 
 	return (
-		<nav className='flex items-center md:items-center  h-auto justify-between bg-dark-blue'>
+		<nav className='flex items-center md:items-center  h-auto justify-between bg-light-orange dark:bg-dark-blue'>
 			<div className='hidden sm:flex sm:flex-row p-8'>
 				<Link to={'/'} className={location.pathname === '/' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 					<p className='flex pr-5'>
@@ -35,7 +42,16 @@ const Navbar = () => {
 				</Link>
 				<Link to={'/cart'} className={location.pathname === '/cart' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 					<p className='flex pr-5'>
-						<ShoppingCartIcon className='h-5 pr-1' />
+						<span className='flex flex-row'>
+							<ShoppingCartIcon className='h-5 pr-1'/>
+							{	
+								cartItems.length
+								?	<strong className='px-2 mr-2 bg-dark-orange rounded-md'>
+										{(cartItems.reduce((acc, item) => acc + item.qty, 0))}
+									</strong>
+								: null
+							}
+						</span>
 						Carrinho
 					</p>
 				</Link>
@@ -67,7 +83,7 @@ const Navbar = () => {
 					)
 				}
 			</div>
-			<MobilMenu location={location} userInfo={userInfo} logoutHandler={logoutHandler} />
+			<MobilMenu location={location} userInfo={userInfo} logoutHandler={logoutHandler} cartItems={cartItems}/>
 			<ToggleTheme />
 		</nav>
 	);

@@ -9,7 +9,7 @@ import {
 import { Link  } from 'react-router-dom';
 
 
-const MobilMenu = ({location, userInfo, logoutHandler}) => {
+const MobilMenu = ({location, userInfo, logoutHandler, cartItems}) => {
 	const mobile_menu = () => {
 		const menu = document.querySelector('.mobile-menu');
 			menu.classList.toggle('hidden');
@@ -32,7 +32,16 @@ const MobilMenu = ({location, userInfo, logoutHandler}) => {
 					</Link>
 					<Link to={'/cart'} className={location.pathname === '/cart' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 						<p className='flex pt-2'>
+							<span className='flex flex-row'>
 							<ShoppingCartIcon className='h-5 pr-1'/>
+							{	
+								cartItems.length
+								?	<strong className='px-2 mr-2 bg-dark-orange rounded-md'>
+										{(cartItems.reduce((acc, item) => acc + item.qty, 0))}
+									</strong>
+								: null
+							}
+							</span>
 							Carrinho
 						</p>
 					</Link>

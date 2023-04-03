@@ -10,7 +10,7 @@ const Rating = ({value, text}) => {
 		<div className='flex flex-col'>
 			<div className='flex flex-row justify-center'>
 				{[...new Array(totalStars)].map((arr, index) => {
-					return index < activeStars ? <FullStar className='w-8' /> : <EmptyStar className='w-8' />;
+					return index < activeStars ? <FullStar key={index} className='w-8' /> : <EmptyStar key={index} className='w-8' />;
 				})}
 			</div>
 			<span>{text && text}</span>
