@@ -3,7 +3,7 @@ module.exports = {
 	darkMode: "class",
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -12,13 +12,13 @@ module.exports = {
 					'text': '#f5f5f5',
 					'bg': '#121520',
 					'blue': '#385eca',
-					'orange': '#FF5722',
+					'orange': '#FF5722'
 				},
 				light: {
 					'text': '#2d2076',
 					'bg': '#f5f5f5',
 					'blue': '#2d2076',
-					'orange': '#FF5722',
+					'orange': '#FF5722'
 				}
 			}
 		},
@@ -28,7 +28,7 @@ module.exports = {
   },
   plugins: [
 		require('tailwind-scrollbar')({ nocompatible: true }),
-		require('@tailwindcss/line-clamp'),
+		require('@tailwindcss/line-clamp')
 	],
 	variants: {
         scrollbar: ['rounded']

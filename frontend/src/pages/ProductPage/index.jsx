@@ -34,7 +34,7 @@ const ProductPage = () => {
 				: error 
 				? (<p>{error}</p>)
 				: (
-					<div className='bg-dark-blue flex flex-col justify-center text-center p-5 rounded'>
+					<div className='bg-dark-blue flex flex-col justify-center text-center p-5 rounded text-white'>
 						<div className='md:justify-center md:flex md:flex-row md:flex-wrap'>
 							<div className='flex justify-center sm:h-96'>
 								<img src={product.url} alt={product.name} className='sm:h-96 rounded' />
@@ -56,41 +56,39 @@ const ProductPage = () => {
 								<p className='px-5 pt-5 line-clamp-6 hover:line-clamp-none indent-5 text-justify'>
 										{product.description}
 								</p>
-							</div>
-						</div>
 
-						<div className=''>
-							<p className={product.countInStock > 0 ? 'text-green-500 mt-3' : 'text-red-500'}>
-								{product.countInStock > 0 ? 'Em estoque' : 'Sem estoque'}
-							</p>
-							{
-								product.countInStock > 0 && (
-									<div className='flex justify-center mt-3'>
-										<p className='pr-3'>
-											Quantidade:
-										</p>
-										<select
-											value={qty}
-											onChange={(e) => setQty(e.target.value)}
-											className='text-black'
-										>
-											{[...Array(product.countInStock).keys()].map((x) => (
-												<option key={x + 1} value={x + 1}>
-													{x + 1}
-												</option>
-											))}
-										</select>
-									</div>
-								)
-							}
-							<button
-								disabled={product.countInStock == 0}
-								type="button"
-								onClick={addToCartHandler}
-								className='bg-green-600 p-4 rounded mt-5'
-							>
-								Adicionar ao carrinho
-							</button>
+								<p className={product.countInStock > 0 ? 'text-green-500 mt-3' : 'text-red-500'}>
+									{product.countInStock > 0 ? 'Em estoque' : 'Sem estoque'}
+								</p>
+								{
+									product.countInStock > 0 && (
+										<div className='flex justify-center mt-3'>
+											<p className='pr-3'>
+												Quantidade:
+											</p>
+											<select
+												value={qty}
+												onChange={(e) => setQty(e.target.value)}
+												className='text-black'
+											>
+												{[...Array(product.countInStock).keys()].map((x) => (
+													<option key={x + 1} value={x + 1}>
+														{x + 1}
+													</option>
+												))}
+											</select>
+										</div>
+									)
+								}
+								<button
+									disabled={product.countInStock == 0}
+									type="button"
+									onClick={addToCartHandler}
+									className='bg-green-600 p-4 rounded mt-5'
+								>
+									Adicionar ao carrinho
+								</button>
+							</div>
 						</div>
 					</div>
       	)

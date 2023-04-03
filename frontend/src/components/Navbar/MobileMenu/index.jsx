@@ -30,10 +30,10 @@ const MobilMenu = ({location, userInfo, logoutHandler, cartItems}) => {
 							Ínicio
 						</p>
 					</Link>
-					<Link to={'/cart'} className={location.pathname === '/cart' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
-						<p className='flex pt-2'>
+					<Link to={'/cart'} className={location.pathname === '/cart' ? 'font-bold' : 'group duration-200'}>
+						<div className='flex pt-2'>
 							<span className='flex flex-row'>
-							<ShoppingCartIcon className='h-5 pr-1'/>
+							<ShoppingCartIcon className='h-5 pr-1 group-hover:text-dark-orange'/>
 							{	
 								cartItems.length
 								?	<strong className='px-2 mr-2 bg-dark-orange rounded-md'>
@@ -42,8 +42,8 @@ const MobilMenu = ({location, userInfo, logoutHandler, cartItems}) => {
 								: null
 							}
 							</span>
-							Carrinho
-						</p>
+							<p className='group-hover:text-dark-orange'>Carrinho</p>
+						</div>
 					</Link>
 					{	
 						userInfo

@@ -38,14 +38,17 @@ const CartPage = () => {
 				<div className='flex flex-col justify-center text-center'>
 						{
 							cartItems.length === 0
-							? (<p>
-									Seu carrinho está vázio <Link to='/'>Voltar</Link>
+							? (<p className='p-10'>
+									Seu carrinho está vázio
+									<Link to='/' className='text-dark-blue hover:text-dark-orange duration-200 pl-1'>
+										Voltar
+									</Link>
 								</p>
 							) : (
 								<div className='flex flex-col justify-center'>
 									{
 										cartItems.map(item => (
-											<div key={item.product} className='p-5 flex flex-col md:flex-row bg-dark-blue rounded mb-5 md:mr-5'>
+											<div key={item.product} className='p-5 flex flex-col md:flex-row bg-dark-blue rounded mb-5 md:mr-5 text-white'>
 												<div className='flex justify-center'>
 													<img 
 														src={item.url}
@@ -64,7 +67,7 @@ const CartPage = () => {
 														<select
 															value={item.qty}
 															onChange={(e) => dispatch(addToCart(item.product, Number(e.target.value)))}
-															className='text-black h-5'
+															className='text-light-text h-5'
 														>
 															{
 																[...Array(item.countInStock).keys()].map((x) => (
@@ -94,7 +97,7 @@ const CartPage = () => {
 						}
 				</div>
 
-				<div className='p-5 flex flex-col text-center bg-dark-blue rounded h-full w-full sm:w-auto'>
+				<div className='p-5 flex flex-col text-center bg-dark-blue rounded h-full w-full sm:w-auto text-white'>
 						<div>
 							<h2 className=''>
 								Total de {cartItems.reduce((acc, item) => acc + item.qty, 0)} produtos
