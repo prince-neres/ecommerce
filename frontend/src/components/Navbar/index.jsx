@@ -27,10 +27,6 @@ const Navbar = () => {
 	const cart = useSelector (state => state.cart);
 	const { cartItems } = cart;
 
-	useEffect(() => {
-		console.log(cartItems)
-	}, [])
-
 	return (
 		<nav className='flex items-center md:items-center  h-auto justify-between'>
 			<div className='hidden sm:flex sm:flex-row p-8'>
@@ -74,7 +70,7 @@ const Navbar = () => {
 						</>
 					)
 					: (
-						<Link to={"/login"} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
+						<Link to={'/login'} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 							<p className='flex hover:text-dark-theme duration-200'>
 								<ArrowRightOnRectangleIcon className='h-5 pr-1' />
 								Login

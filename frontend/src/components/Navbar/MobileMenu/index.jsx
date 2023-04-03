@@ -63,7 +63,7 @@ const MobilMenu = ({location, userInfo, logoutHandler, cartItems}) => {
 								</button>
 							</>
 							) : (
-								<Link to={"/login"} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
+								<Link to={'/login'} className={location.pathname === '/login' ? 'font-bold' : 'hover:text-dark-orange duration-200'}>
 									<p className='flex duration-200 pt-2'>
 										<ArrowRightOnRectangleIcon className='h-5 pr-1'/>
 										Login

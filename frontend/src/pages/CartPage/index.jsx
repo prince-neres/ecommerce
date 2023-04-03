@@ -19,8 +19,6 @@ const CartPage = () => {
 		if (id) {
 			dispatch(addToCart(id, qty));
 		};
-
-		console.log(cartItems)
 	}, [dispatch, id, qty]);
 
 	const removeFromCartHandler = (id) => {

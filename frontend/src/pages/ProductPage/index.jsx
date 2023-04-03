@@ -25,7 +25,7 @@ const ProductPage = () => {
 
 	return (
 		<div className='p-8'>
-      <Link to="/" className='flex pb-5'>
+      <Link to='/' className='flex pb-5'>
         <ArrowLeftIcon className='h-5 pr-1 text-lg'/> Voltar
       </Link>
 			{
@@ -50,7 +50,7 @@ const ProductPage = () => {
 									<Rating
 										value={product.rating}
 										text={`${product.numReviews} avaliações`}
-										color={"#f8e825"}
+										color={'#f8e825'}
 									/>
 								</div>
 								<p className='px-5 pt-5 line-clamp-6 hover:line-clamp-none indent-5 text-justify'>
@@ -82,7 +82,7 @@ const ProductPage = () => {
 								}
 								<button
 									disabled={product.countInStock == 0}
-									type="button"
+									type='button'
 									onClick={addToCartHandler}
 									className='bg-green-600 p-4 rounded mt-5'
 								>
