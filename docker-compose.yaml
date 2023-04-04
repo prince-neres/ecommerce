@@ -1,4 +1,25 @@
 services:
+  db:
+    image: postgres:12.5
+    environment:
+      POSTGRES_DB: ecommerce
+      POSTGRES_USER: teste
+      POSTGRES_PASSWORD: teste
+    ports:
+      - "5000:5432"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "pg_isready",
+          "-U",
+          "teste",
+          "-d",
+          "ecommerce"
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
   backend:
     build: ./backend
     command: [ "sh", "entrypoint.sh" ]
@@ -6,6 +27,11 @@ services:
       - ./backend:/app
     ports:
       - 8000:8000
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
   frontend:
     build: ./frontend
     command: npm run dev
@@ -13,3 +39,5 @@ services:
       - ./frontend:/app
     ports:
       - 3000:3000
+    depends_on:
+      - backend

@@ -19,9 +19,10 @@ const HomePage = () => {
 			<h2 className='font-bold text-lg pt-5 text-center'>Últimos produtos</h2>
 			{
 				loading
-				? (	
-					<Loader />
-				) : (
+				? (<Loader />)
+				: error 
+				? (<p className='text-center font-bold text-red-500 pb-5'>{error}</p>)
+				: (
 					<div className='my-3 flex flex-col flex-wrap justify-center sm:flex-row'>
 						{
 							products.map((product) => (
