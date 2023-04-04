@@ -1,0 +1,15 @@
+services:
+  backend:
+    build: ./backend
+    command: [ "sh", "entrypoint.sh" ]
+    volumes:
+      - ./backend:/app
+    ports:
+      - 8000:8000
+  frontend:
+    build: ./frontend
+    command: npm run dev
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 3000:3000
