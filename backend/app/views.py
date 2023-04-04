@@ -10,6 +10,7 @@ from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
 from django.contrib.auth.hashers import make_password
 from .serializer import ProductSerializer,UserSerializer,UserSerializerWithToken
+from app.insert_products import insert
 
 
 @api_view(['GET'])
@@ -18,9 +19,11 @@ def getRoutes(request):
 
 @api_view(['GET'])
 def getProducts(request):
-    products=Product.objects.all()
-    serializer=ProductSerializer(products,many=True)
-    return Response(serializer.data)
+	products=Product.objects.all()
+	if not products:	
+			insert()
+	serializer=ProductSerializer(products,many=True)
+	return Response(serializer.data)
 
 @api_view(['GET'])
 def getProduct(request,pk):
