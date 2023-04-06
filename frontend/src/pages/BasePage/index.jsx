@@ -3,7 +3,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 
 
-const BasePage = () => {
+function BasePage () {
 	return (
 		<div className='h-screen flex flex-col justify-between scrollbar-thin scrollbar-thumb-dark-blue overflow-y-scroll scrollbar-thumb-rounded-full'>
       <Navbar />

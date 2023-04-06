@@ -7,22 +7,21 @@ import CartPage from './pages/CartPage';
 import ProfilePage from './pages/ProfilePage';
 import BasePage from './pages/BasePage';
 
-
-const Router = () => {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<BasePage />} >
-						<Route index element={<HomePage />} exact />
-						<Route path='/login' element={<LoginPage />} exact />
-						<Route path='/register' element={<RegisterPage />} exact />
-						<Route path='/product/:id' element={<ProductPage />} exact />
-						<Route path='/cart/:id?' element={<CartPage />} exact />
-						<Route path='/profile' element={<ProfilePage />} exact />
-				</Route>
-			</Routes>
-		</BrowserRouter>
-	);
-};
+function Router() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BasePage />}>
+          <Route index element={<HomePage />} exact />
+          <Route path="/login" element={<LoginPage />} exact />
+          <Route path="/register" element={<RegisterPage />} exact />
+          <Route path="/product/:id" element={<ProductPage />} exact />
+          <Route path="/cart/:id?" element={<CartPage />} exact />
+          <Route path="/profile" element={<ProfilePage />} exact />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default Router;

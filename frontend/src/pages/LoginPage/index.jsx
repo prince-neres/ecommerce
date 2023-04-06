@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/solid';
 import Loader from '../../components/Loader';
 import { login } from '../../redux/actions/userActions';
-import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/solid';
 
 
-const LoginPage = () => {
+function LoginPage() {
 	const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 	const dispatch = useDispatch()
@@ -85,6 +85,6 @@ const LoginPage = () => {
 			</div>
 		</div>
 	);
-};
+}
 
 export default LoginPage;
