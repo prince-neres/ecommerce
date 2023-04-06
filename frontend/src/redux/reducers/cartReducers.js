@@ -1,8 +1,9 @@
 import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants';
 
-const cartReducer = (action, state = { cartItems: [] }) => {
+// eslint-disable-next-line default-param-last
+const cartReducer = (state = { cartItems: [] }, action) => {
   const item = action.payload;
-  const existItem = state.cartItems.find((x) => x.product === item.product);
+  const existItem = state.cartItems.find((x) => x.product === item?.product);
 
   switch (action.type) {
     case CART_ADD_ITEM:

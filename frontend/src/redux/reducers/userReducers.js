@@ -8,7 +8,8 @@ import {
   USER_REGISTER_REQUEST,
 } from '../constants/userConstants';
 
-export const userLoginReducers = (action, state = {}) => {
+// eslint-disable-next-line default-param-last
+export const userLoginReducers = (state = {}, action) => {
   switch (action.type) {
     case USER_LOGIN_REQUEST:
       return { laoding: true };
@@ -29,7 +30,8 @@ export const userLoginReducers = (action, state = {}) => {
   }
 };
 
-export const userRegisterReducers = (action, state = {}) => {
+// eslint-disable-next-line default-param-last
+export const userRegisterReducers = (state = {}, action) => {
   switch (action.type) {
     case USER_REGISTER_REQUEST:
       return { loading: true };
