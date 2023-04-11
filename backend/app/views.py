@@ -8,6 +8,7 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import status
+from rest_framework import serializers
 from django.contrib.auth.hashers import make_password
 from .serializer import ProductSerializer,UserSerializer,UserSerializerWithToken
 from app.insert_products import insert
@@ -33,15 +34,23 @@ def getProduct(request,pk):
 
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+	default_error_messages = {
+			'no_active_account': 'Não foi possível encontrar uma conta ativa com as credenciais fornecidas.',
+			'invalid_credentials': 'Não foi possível fazer login com as credenciais fornecidas.',
+	}
 
-    def validate(self,attrs):
-        data=super().validate(attrs)
-        serializer = UserSerializerWithToken(self.user).data
-        for k,v in serializer.items():
-            data[k]=v
-    
+	def validate(self,attrs):
+		data=super().validate(attrs) 
+		if not self.user.is_active:
+			raise serializers.ValidationError(
+					self.error_messages['no_active_account'],
+					code='no_active_account',
+			)
+		serializer = UserSerializerWithToken(self.user).data
+		for k,v in serializer.items():
+				data[k]=v
 
-        return data
+		return data
 
 
 class MyTokenObtainPairView(TokenObtainPairView):
@@ -77,5 +86,5 @@ def registerUser(request):
         serializer=UserSerializerWithToken(user,many=False)
         return Response(serializer.data)
     except:
-        message={'details':'USER WITH THIS EMAIL ALREADY EXIST'}
+        message={'details':'Email já existe!'}
         return Response(message,status=status.HTTP_400_BAD_REQUEST)
