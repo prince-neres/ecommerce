@@ -41,62 +41,53 @@ function RegisterPage() {
         {message && <p className="text-center font-bold text-dark-orange pb-5">{message}</p>}
         {error && <p className="text-center font-bold text-red-500 pb-5">{error}</p>}
         <form onSubmit={submitHandler} className="flex flex-col text-center">
-          <label className="font-bold mb-3" htmlFor="name">
+          <label className="font-bold flex flex-col" htmlFor="name">
             Nome
             <input
               id="name"
               type="name"
               placeholder="Digite seu nome"
-              className="mb-3 p-3 rounded"
+              className="my-3 p-3 rounded"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
             />
           </label>
 
-          <label htmlFor="email" className="font-bold my-3">
+          <label htmlFor="email" className="font-bold flex flex-col py-3">
             Email
             <input
               id="email"
               required
               type="email"
               placeholder="Digite seu email"
-              className="mb-3 p-3 rounded"
+              className="my-3 p-3 rounded"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </label>
-          <input
-            id="email"
-            required
-            type="email"
-            placeholder="Digite seu email"
-            className="mb-3 p-3 rounded"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
 
-          <label className="font-bold my-3" htmlFor="password">
+          <label className="font-bold flex flex-col py-3" htmlFor="password">
             Senha
             <input
               required
               id="password"
               type="password"
               placeholder="Digite a senha"
-              className="mb-3 p-3 rounded"
+              className="my-3 p-3 rounded"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </label>
 
-          <label className="font-bold my-3" htmlFor="confirm-password">
+          <label className="font-bold flex flex-col" htmlFor="confirm-password">
             Confirmar Senha
             <input
               required
               id="confirm-password"
               type="password"
               placeholder="Confirme a senha"
-              className="p-3 rounded"
+              className="mt-3 p-3 rounded"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -104,7 +95,7 @@ function RegisterPage() {
 
           <button
             type="submit"
-            className="font-bold bg-green-500 p-3 my-7 rounded text-white flex flex-row items-center justify-center"
+            className="font-bold bg-green-500 p-3 my-7 rounded text-whi	te flex flex-row items-center justify-center"
           >
             {loading && <Loader />} Cadastrar
           </button>
