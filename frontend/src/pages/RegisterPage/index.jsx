@@ -47,7 +47,7 @@ function RegisterPage() {
               id="name"
               type="name"
               placeholder="Digite seu nome"
-              className="my-3 p-3 rounded"
+              className="my-3 p-3 rounded text-dark-bg"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -61,7 +61,7 @@ function RegisterPage() {
               required
               type="email"
               placeholder="Digite seu email"
-              className="my-3 p-3 rounded"
+              className="my-3 p-3 rounded text-dark-bg"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -74,7 +74,7 @@ function RegisterPage() {
               id="password"
               type="password"
               placeholder="Digite a senha"
-              className="my-3 p-3 rounded"
+              className="my-3 p-3 rounded text-dark-bg"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -87,7 +87,7 @@ function RegisterPage() {
               id="confirm-password"
               type="password"
               placeholder="Confirme a senha"
-              className="mt-3 p-3 rounded"
+              className="mt-3 p-3 rounded text-dark-bg"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />

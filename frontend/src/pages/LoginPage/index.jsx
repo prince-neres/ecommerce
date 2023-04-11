@@ -41,7 +41,7 @@ function LoginPage() {
               type="email"
               id="email"
               placeholder="Digite seu email"
-              className="mt-3 p-3 rounded"
+              className="mt-3 p-3 rounded text-dark-bg"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -54,7 +54,7 @@ function LoginPage() {
               type="password"
               id="password"
               placeholder="Digite seu senha"
-              className="mt-3 p-3 rounded"
+              className="mt-3 p-3 rounded text-dark-bg"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
