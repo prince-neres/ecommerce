@@ -1,5 +1,5 @@
 # Use a node 14 image as the base
-FROM node:19-alpine3.16
+FROM node:19-bullseye-slim
 
 # Set the working directory in the container
 WORKDIR /app
